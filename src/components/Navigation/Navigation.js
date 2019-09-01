@@ -1,11 +1,12 @@
 import React from 'react';
 import {Container, Nav, Navbar, NavDropdown} from 'react-bootstrap';
 import { LinkContainer } from "react-router-bootstrap";
+import "./navigation.css"
 
 class Navigation extends React.Component {
     render() {
         return (
-            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="navigation-spacing">
                 <Container>
                     <LinkContainer to="/">
                         <Navbar.Brand>Home</Navbar.Brand>
@@ -17,11 +18,15 @@ class Navigation extends React.Component {
                                 <Nav.Link>Premier League</Nav.Link>
                             </LinkContainer>
                             <NavDropdown title="My League" id="collasible-nav-dropdown">
-                                <NavDropdown.Item href="#action/3.1">Create League</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.2">Join League</NavDropdown.Item>
+                                <LinkContainer to="/create-league">
+                                    <NavDropdown.Item>Create League</NavDropdown.Item>
+                                </LinkContainer>
+                                <LinkContainer to="/join-league">
+                                    <NavDropdown.Item>Join League</NavDropdown.Item>
+                                </LinkContainer>
                                 <NavDropdown.Divider/>
                                 <LinkContainer to="/my-league">
-                                    <NavDropdown.Item href="#action/3.4">My Leagues</NavDropdown.Item>
+                                    <NavDropdown.Item>My Leagues</NavDropdown.Item>
                                 </LinkContainer>
                             </NavDropdown>
                         </Nav>

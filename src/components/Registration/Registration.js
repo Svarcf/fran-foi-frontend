@@ -1,11 +1,15 @@
 import React from 'react';
 import {Container, Form, Button} from 'react-bootstrap';
 
-class Login extends React.Component {
+class Registration extends React.Component {
     render() {
         return (
             <Container>
                 <Form>
+                    <Form.Group controlId="formGroupEmail">
+                        <Form.Label>Email</Form.Label>
+                        <Form.Control type="email" placeholder="Email" />
+                    </Form.Group>
                     <Form.Group controlId="formGroupUsername">
                         <Form.Label>Username</Form.Label>
                         <Form.Control type="text" placeholder="Username" />
@@ -23,4 +27,4 @@ class Login extends React.Component {
     }
 }
 
-export default Login;
+export default Registration;
